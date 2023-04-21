@@ -9,7 +9,7 @@ import { defaultTheme } from './styles/themes/default'
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <BrowserRouter>
+      <BrowserRouter basename="/02-ignite-timer/">
         <CyclesContextProvider>
           <Router />
         </CyclesContextProvider>
