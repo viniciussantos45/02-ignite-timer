@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+const mobileBreakpoint = '768px'
+
 export const HistoryContainer = styled.div`
   flex: 1;
   padding: 3.5rem;
@@ -9,6 +11,10 @@ export const HistoryContainer = styled.div`
   h1 {
     font-size: 1.5rem;
     color: ${({ theme }) => theme['gray-100']};
+  }
+
+  @media (max-width: ${mobileBreakpoint}) {
+    padding: 2rem;
   }
 `
 export const HistoryList = styled.div`
@@ -57,6 +63,22 @@ export const HistoryList = styled.div`
       }
     }
   }
+
+  @media (max-width: ${mobileBreakpoint}) {
+    table {
+      min-width: 100%;
+
+      th {
+        font-size: 0.75rem;
+        padding: 0.75rem;
+      }
+
+      td {
+        font-size: 0.75rem;
+        padding: 0.75rem;
+      }
+    }
+  }
 `
 
 const STATUS_COLORS = {
@@ -80,6 +102,15 @@ export const Status = styled.span<StatusProps>`
     height: 0.5rem;
     border-radius: 9999px;
     background-color: ${({ theme, statusColor }) =>
-    theme[STATUS_COLORS[statusColor]]};
+      theme[STATUS_COLORS[statusColor]]};
+  }
+
+  @media (max-width: ${mobileBreakpoint}) {
+    gap: 0.25rem;
+
+    &::before {
+      width: 0.4rem;
+      height: 0.4rem;
+    }
   }
 `
