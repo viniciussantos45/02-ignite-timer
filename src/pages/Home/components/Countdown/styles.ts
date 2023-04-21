@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+const mobileBreakpoint = '768px'
+
 export const CountdownContainer = styled.div`
   font-family: 'Roboto Mono', monospace;
   font-size: 10rem;
@@ -14,6 +16,15 @@ export const CountdownContainer = styled.div`
     padding: 2rem 1rem;
     border-radius: 8px;
   }
+
+  @media (max-width: ${mobileBreakpoint}) {
+    font-size: 6rem;
+    line-height: 5rem;
+
+    span {
+      padding: 1.5rem 0.5rem;
+    }
+  }
 `
 
 export const Separator = styled.div`
@@ -23,4 +34,9 @@ export const Separator = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
+
+  @media (max-width: ${mobileBreakpoint}) {
+    padding: 1.5rem 0;
+    width: 2.5rem;
+  }
 `

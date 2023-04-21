@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+const mobileBreakpoint = '768px'
+
 export const FormContainer = styled.div`
   width: 100%;
   display: flex;
@@ -11,6 +13,11 @@ export const FormContainer = styled.div`
   font-size: 1.125rem;
   font-weight: bold;
   flex-wrap: wrap;
+
+  @media (max-width: ${mobileBreakpoint}) {
+    gap: 0.25rem;
+    font-size: 1rem;
+  }
 `
 
 const BaseInput = styled.input`
@@ -32,6 +39,11 @@ const BaseInput = styled.input`
   &::placeholder {
     color: ${({ theme }) => theme['gray-500']};
   }
+
+  @media (max-width: ${mobileBreakpoint}) {
+    font-size: 1rem;
+    padding: 0 0.25rem;
+  }
 `
 
 export const TaskInput = styled(BaseInput)`
@@ -43,4 +55,7 @@ export const TaskInput = styled(BaseInput)`
 
 export const MinutesAmountInput = styled(BaseInput)`
   width: 4rem;
+  @media (max-width: ${mobileBreakpoint}) {
+    width: 3.5rem;
+  }
 `

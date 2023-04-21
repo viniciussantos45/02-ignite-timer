@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+const mobileBreakpoint = '768px'
+
 export const HomeContainer = styled.main`
   flex: 1;
 
@@ -13,6 +15,10 @@ export const HomeContainer = styled.main`
     flex-direction: column;
     align-items: center;
     gap: 3.5rem;
+  }
+
+  @media (max-width: ${mobileBreakpoint}) {
+    padding: 0 1rem;
   }
 `
 
@@ -36,6 +42,10 @@ export const BaseCountdownButton = styled.button`
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+  }
+
+  @media (max-width: ${mobileBreakpoint}) {
+    padding: 0.8rem;
   }
 `
 
