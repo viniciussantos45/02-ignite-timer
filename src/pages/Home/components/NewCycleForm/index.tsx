@@ -8,6 +8,8 @@ export function NewCycleForm() {
 
   const { register } = useFormContext()
 
+  const listTasks = cycles.map((cycle) => cycle.task)
+
   return (
     <FormContainer>
       <div>
@@ -25,9 +27,13 @@ export function NewCycleForm() {
           <option value="Praticar exercícios" />
           <option value="Aprender Inglês" />
           <option value="Codar" />
-          {cycles.map((cycle) => (
-            <option key={cycle.task} value={cycle.task} />
-          ))}
+
+          {
+            // Remove duplicate tasks
+            [...new Set(listTasks)].map((task) => (
+              <option key={task} value={task} />
+            ))
+          }
         </datalist>
       </div>
 
